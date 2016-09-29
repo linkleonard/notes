@@ -1,0 +1,32 @@
+{
+  "name": "notes",
+  "version": "0.0.0",
+  "description": "React + redux experimentation",
+  "main": "src/lib.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linkleonard/notes.git"
+  },
+  "author": "Leonard Law <leon.wlaw@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/linkleonard/notes/issues"
+  },
+  "homepage": "https://github.com/linkleonard/notes#readme",
+  "devDependencies": {
+    "babel-core": "^6.16.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}
