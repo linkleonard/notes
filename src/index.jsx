@@ -6,7 +6,8 @@ import { addNote, modifyNote } from './actions.jsx';
 import { todoApp } from './reducers.jsx';
 import App from './components/App.jsx';
 
-const store = createStore(todoApp);
+const devTools = window.devToolsExtension && window.devToolsExtension();
+const store = createStore(todoApp, devTools);
 
 const container = document.createElement('div');
 document.body.appendChild(container);

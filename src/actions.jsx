@@ -5,3 +5,7 @@ export function addNote({ text }) {
 export function modifyNote({ index, text }) {
     return { type: 'MODIFY_NOTE', index, text }
 }
+
+export function toggleNoteEditing({ index }) {
+    return { type: 'TOGGLE_NOTE_EDIT', index };
+}
