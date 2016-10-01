@@ -1,16 +1,17 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { modifyNote, toggleNoteEditing } from '../actions.jsx';
 
 
 let SaveNote = ({ dispatch, index, getValue }) => (
-    <button
-        type="button"
+    <Button
+        bsStyle='primary'
         onClick={ () => {
             dispatch(modifyNote({ index, text: getValue() }))
             dispatch(toggleNoteEditing({ index }))
         }}
-    >Save</button>
+    >Save</Button>
 );
 
 SaveNote = connect()(SaveNote);

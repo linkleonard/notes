@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { addNote } from '../actions.jsx';
 
@@ -9,8 +10,8 @@ let AddNote = ({ dispatch }) => {
     return (
         <div>
             <input ref={ note => input = note } />
-            <button
-                type="button"
+            <Button
+                bsStyle="primary"
                 onClick={e => {
                     e.preventDefault();
 
@@ -20,7 +21,7 @@ let AddNote = ({ dispatch }) => {
                     dispatch(addNote({ text: input.value }));
                     input.value = ''
                 }}
-            >Save</button>
+            >Save</Button>
         </div>
     );
 }

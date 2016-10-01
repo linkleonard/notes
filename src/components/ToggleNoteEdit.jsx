@@ -1,10 +1,15 @@
 import React from 'react';
-import Link from './Link.jsx';
+import { Button } from 'react-bootstrap';
 
-const ToggleNoteEdit = ({ index, editing, onClick }) => (
-    <Link onClick={ () => onClick(index) }>
-        { !editing ? 'Edit' : 'Revert' }
-    </Link>
-)
+const ToggleNoteEdit = ({ index, editing, onClick }) => {
+    const label = !editing ? 'Edit' : 'Revert';
+    const bsStyle = !editing ? 'default' : 'danger';
+    return (
+        <Button
+            bsStyle={ bsStyle }
+            onClick={ () => onClick(index) }
+        >{ label }</Button>
+    );
+}
 
 export default ToggleNoteEdit;

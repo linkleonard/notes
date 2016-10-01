@@ -16,6 +16,21 @@ module.exports = {
                 test: /.jsx?$/,
                 loader: 'babel-loader',
                 exclude: path.join(__dirname, 'node_modules'),
+            },
+            {
+                test: /.css$/,
+                include: '/',
+                loaders: ['style', 'css'],
+            },
+            {
+                test: /.less$/,
+                include: '/',
+                loaders: ['style', 'css', 'less'],
+            },
+            {
+                test: /\.(woff2?|eot|ttf|svg)$/,
+                include: '/',
+                loaders: ['file-loader'],
             }
         ]
     },
