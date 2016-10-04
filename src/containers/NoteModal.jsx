@@ -10,6 +10,8 @@ const mapStateToProps = (state) => {
     return {
         show: state.noteList.noteEditorActive,
         index: state.noteList.editing,
+        initialValues: state.noteList.editing !== null ?
+            state.noteList.notes[state.noteList.editing] : {},
     }
 }
 
