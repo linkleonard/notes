@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { modifyNote, toggleNoteEditing } from '../actions.jsx';
+import { modifyNote, setActiveNote } from '../actions.jsx';
 
 
 let SaveNote = ({ dispatch, index, getValue }) => (
@@ -9,7 +9,7 @@ let SaveNote = ({ dispatch, index, getValue }) => (
         bsStyle='primary'
         onClick={ () => {
             dispatch(modifyNote({ index, text: getValue() }))
-            dispatch(toggleNoteEditing({ index }))
+            dispatch(setActiveNote({ index }))
         }}
     >Save</Button>
 );

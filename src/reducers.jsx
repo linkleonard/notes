@@ -4,7 +4,8 @@ import { reducer as formReducer } from 'redux-form';
 
 const initialState = {
     notes: [],
-    editing: [],
+    editing: null,
+    noteEditorActive: false,
 }
 
 
@@ -14,7 +15,6 @@ export const noteListReducer = (state = initialState, action = {}) => {
         return {
             ...state,
             notes: [ ...state.notes, { id: null, text: action.text } ],
-            editing: [ ...state.editing, false ],
         }
 
     case 'MODIFY_NOTE':
@@ -27,9 +27,10 @@ export const noteListReducer = (state = initialState, action = {}) => {
         return { ...state, notes: notes }
 
     case 'TOGGLE_NOTE_EDIT':
-        const editing = [ ...state.editing ];
-        editing[action.index] = !state.editing[action.index];
-        return { ...state, editing };
+        return { ...state, editing: action.index };
+
+    case 'SET_EDITOR_VISIBLE':
+        return  { ...state, noteEditorActive: action.active };
     }
 
 

@@ -1,22 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleNoteEditing } from '../actions.jsx';
+import { setActiveNote, setNoteEditorActive } from '../actions.jsx';
 import ToggleNoteEditComponent from '../components/ToggleNoteEdit.jsx';
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onClick: (index) => {
-            dispatch(toggleNoteEditing({ index }));
+            dispatch(setActiveNote({ index }));
+            dispatch(setNoteEditorActive({ active: true }));
         }
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        editing: state.noteList.editing[ownProps.index],
-    };
-}
-
-const ToggleNoteEdit = connect(mapStateToProps, mapDispatchToProps)(ToggleNoteEditComponent);
+const ToggleNoteEdit = connect(null, mapDispatchToProps)(ToggleNoteEditComponent);
 
 export default ToggleNoteEdit;

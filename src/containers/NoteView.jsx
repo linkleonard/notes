@@ -1,27 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addNote } from '../actions.jsx';
+import AddNoteButton from './AddNoteButton.jsx';
 import NoteList from './NoteList.jsx';
-import AddNoteForm from './AddNoteForm.jsx';
-
+import NoteModal from './NoteModal.jsx';
 
 
 let NoteView = ({ dispatch }) => {
-    const createNewNote = (values) => {
-        return new Promise(resolve => {
-            // Simulate an Ajax request by using a 500ms delay
-            setTimeout(() => {
-                dispatch(addNote(values));
-
-                resolve();
-            }, 500);
-        });
-    }
-
     return (
         <div>
             <NoteList />
-            <AddNoteForm onSubmit={ createNewNote } />
+            <AddNoteButton />
+            <NoteModal />
         </div>
     );
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import WrappedFormControl from '../components/WrappedFormControl.jsx';
+import { reduxForm } from 'redux-form';
 
 
-const AddNote = ({ handleSubmit, pristine, invalid, submitting, ...props }) => (
+let NoteForm = ({ handleSubmit, pristine, invalid, submitting, showCancel = true, ...props }) => (
     <form onSubmit={handleSubmit}>
         <Field
             name="text"
@@ -17,12 +18,17 @@ const AddNote = ({ handleSubmit, pristine, invalid, submitting, ...props }) => (
             disabled={pristine || invalid || submitting }
             bsStyle="primary"
         >Save</Button>
+        { showCancel && <Button
+            disabled={submitting}
+            bsStyle="danger"
+        >
+            Cancel
+        </Button>}
     </form>
 );
 
+NoteForm = reduxForm({
+    form: 'note',
+})(NoteForm);
 
-const AddNoteForm = reduxForm({
-    form: 'addNote',
-})(AddNote);
-
-export default AddNoteForm;
+export default NoteForm;
