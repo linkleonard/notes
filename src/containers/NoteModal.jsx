@@ -33,10 +33,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             });
         });
     }
+    const handleCancel = () => {
+        dispatch(setNoteEditorActive({ active: false }));
+    }
 
     return {
         createNote,
         updateNote,
+        handleCancel,
     }
 }
 

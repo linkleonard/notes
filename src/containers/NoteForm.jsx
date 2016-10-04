@@ -5,7 +5,7 @@ import WrappedFormControl from '../components/WrappedFormControl.jsx';
 import { reduxForm } from 'redux-form';
 
 
-let NoteForm = ({ handleSubmit, pristine, invalid, submitting, showCancel = true, ...props }) => (
+let NoteForm = ({ handleSubmit, handleCancel, pristine, invalid, submitting, showCancel = true, ...props }) => (
     <form onSubmit={handleSubmit}>
         <Field
             name="text"
@@ -21,6 +21,7 @@ let NoteForm = ({ handleSubmit, pristine, invalid, submitting, showCancel = true
         { showCancel && <Button
             disabled={submitting}
             bsStyle="danger"
+            onClick={ handleCancel }
         >
             Cancel
         </Button>}
