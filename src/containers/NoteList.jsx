@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
     return {
-        notes: state.notes,
-        editing: state.editing,
+        notes: state.noteList.notes,
+        editing: state.noteList.editing,
     }
 }
 

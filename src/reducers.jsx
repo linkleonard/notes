@@ -1,10 +1,14 @@
+import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+
+
 const initialState = {
     notes: [],
     editing: [],
 }
 
 
-export const todoApp = (state = initialState, action = {}) => {
+export const noteListReducer = (state = initialState, action = {}) => {
     switch (action.type) {
     case 'ADD_NOTE':
         return {
@@ -32,3 +36,12 @@ export const todoApp = (state = initialState, action = {}) => {
     // Unknown action, don't do anything.
     return state;
 }
+
+const reducers = {
+    noteList: noteListReducer,
+    form: formReducer,
+}
+
+const reducer = combineReducers(reducers);
+
+export default reducer;

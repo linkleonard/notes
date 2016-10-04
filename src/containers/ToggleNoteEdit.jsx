@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        editing: state.editing[ownProps.index],
+        editing: state.noteList.editing[ownProps.index],
     };
 }
 
