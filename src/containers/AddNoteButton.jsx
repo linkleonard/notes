@@ -6,6 +6,7 @@ import { setActiveNote, setNoteEditorActive } from '../actions.jsx';
 
 let AddNoteButton = ({ dispatch }) => (
     <Button
+        bsStyle='primary'
         onClick={ () => {
             dispatch(setActiveNote({ index: null }));
             dispatch(setNoteEditorActive({ active: true }));

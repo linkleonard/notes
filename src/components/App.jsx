@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteView from '../containers/NoteView.jsx';
-import 'bootstrap/less/bootstrap.less';
+import '!style!css?-modules!bootstrap/dist/css/bootstrap.css';
+
 
 const App = () => {
 

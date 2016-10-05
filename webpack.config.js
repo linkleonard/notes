@@ -20,12 +20,12 @@ module.exports = {
             {
                 test: /.css$/,
                 include: '/',
-                loaders: ['style', 'css'],
+                loaders: ['style', 'css?modules'],
             },
             {
                 test: /.less$/,
                 include: '/',
-                loaders: ['style', 'css', 'less'],
+                loaders: ['style', 'css?modules', 'less'],
             },
             {
                 test: /\.(woff2?|eot|ttf|svg)$/,
